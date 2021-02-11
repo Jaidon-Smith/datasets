@@ -412,7 +412,7 @@ class DatasetBuilder(registered.RegisteredDataset):
     if not utils.has_sufficient_disk_space(
         self.info.dataset_size + self.info.download_size,
         directory=self._data_dir_root):
-      raise IOError(
+      printf(
           "Not enough disk space. Needed: {} (download: {}, generated: {})"
           .format(
               self.info.dataset_size + self.info.download_size,
