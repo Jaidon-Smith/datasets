@@ -121,10 +121,12 @@ def _generate_librispeech_examples(directory):
   except:
     print("The glob is failing")
   print("Transcript glob is ", transcripts_glob)
-  print("the files are", [i for i in tf.io.gfile.glob(transcripts_glob)])
+  #print("the files are", [i for i in tf.io.gfile.glob(transcripts_glob)])
 
   for transcript_file in tf.io.gfile.glob(transcripts_glob):
     path = os.path.dirname(transcript_file)
+    print("Transcript file is ", transcript_file)
+    print("The path is ", path)
     with tf.io.gfile.GFile(os.path.join(path, transcript_file)) as f:
       for line in f:
         line = line.strip()
