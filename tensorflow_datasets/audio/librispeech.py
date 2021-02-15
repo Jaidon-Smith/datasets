@@ -115,7 +115,7 @@ class Librispeech(tfds.core.BeamBasedBuilder):
 
 def _generate_librispeech_examples(directory):
   """Generate examples from a Librispeech directory."""
-  print("The directory is ", directory)
+  print("The directory is ", directory, "I don't think this change is being compiled")
   try:
     transcripts_glob = s.path.join(directory, "LibriSpeecho", "*/*/*/*.txt")
   except:
