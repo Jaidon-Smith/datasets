@@ -117,6 +117,7 @@ def _generate_librispeech_examples(directory):
   """Generate examples from a Librispeech directory."""
   print("The directory is ", directory)
   transcripts_glob = os.path.join(directory, "LibriSpeech", "*/*/*/*.txt")
+  print(transcripts_glob)
   for transcript_file in tf.io.gfile.glob(transcripts_glob):
     path = os.path.dirname(transcript_file)
     with tf.io.gfile.GFile(os.path.join(path, transcript_file)) as f:
