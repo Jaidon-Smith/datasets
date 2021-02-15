@@ -115,6 +115,7 @@ class Librispeech(tfds.core.BeamBasedBuilder):
 
 def _generate_librispeech_examples(directory):
   """Generate examples from a Librispeech directory."""
+  print("The directory is ", directory)
   transcripts_glob = os.path.join(directory, "LibriSpeech", "*/*/*/*.txt")
   for transcript_file in tf.io.gfile.glob(transcripts_glob):
     path = os.path.dirname(transcript_file)
