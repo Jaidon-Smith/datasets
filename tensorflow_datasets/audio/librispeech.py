@@ -141,6 +141,6 @@ def _generate_librispeech_examples(directory):
             "speech": os.path.join(path, audio_file),
             "text": transcript
         }
-        print("Audio file: ", speech)
+        print("Audio file: ", example['speech'])
         print()
         yield key, example
