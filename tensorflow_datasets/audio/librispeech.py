@@ -115,20 +115,16 @@ class Librispeech(tfds.core.BeamBasedBuilder):
 
 def _generate_librispeech_examples(directory):
   """Generate examples from a Librispeech directory."""
-  #print("The directory is ", directory, "I don't think this change is being compiled")
-  try:
-    transcripts_glob = os.path.join(directory, "LibriSpeech", "*/*/*/*.txt")
-  except:
-    print("The glob is failing")
-  #print("Transcript glob is ", transcripts_glob)
-  #print("the files are", [i for i in tf.io.gfile.glob(transcripts_glob)])
+
+  transcripts_glob = os.path.join(directory, "LibriSpeech", "*/*/*/*.txt")
+
 
   for transcript_file in tf.io.gfile.glob(transcripts_glob):
     path = os.path.dirname(transcript_file)
     #print("Transcript file is ", transcript_file)
     #print("The path is ", path)
-    #with tf.io.gfile.GFile(os.path.join(path, transcript_file)) as f:
-    with tf.io.gfile.GFile(transcript_file) as f:
+    with tf.io.gfile.GFile(os.path.join(path, transcript_file)) as f:
+    #with tf.io.gfile.GFile(transcript_file) as f:
       for line in f:
         line = line.strip()
         key, transcript = line.split(" ", 1)
