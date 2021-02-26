@@ -140,3 +140,4 @@ def _generate_librispeech_examples(directory):
         print("Audio file: ", example['speech'])
         print()
         yield key, example
+        break
