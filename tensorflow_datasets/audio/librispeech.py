@@ -123,8 +123,8 @@ def _generate_librispeech_examples(directory):
     path = os.path.dirname(transcript_file)
     #print("Transcript file is ", transcript_file)
     #print("The path is ", path)
-    #with tf.io.gfile.GFile(os.path.join(path, transcript_file)) as f:
-    with tf.io.gfile.GFile(transcript_file) as f:
+    with tf.io.gfile.GFile(os.path.join(path, transcript_file)) as f:
+    #with tf.io.gfile.GFile(transcript_file) as f:
       for line in f:
         line = line.strip()
         key, transcript = line.split(" ", 1)
