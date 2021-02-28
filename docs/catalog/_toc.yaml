@@ -44,6 +44,11 @@ toc:
     title: yes_no
   title: Audio
 - section:
+  - path: /datasets/catalog/ogbg_molpcba
+    status: nightly
+    title: ogbg_molpcba
+  title: Graphs
+- section:
   - path: /datasets/catalog/abstract_reasoning
     title: abstract_reasoning (manual)
   - path: /datasets/catalog/aflw2k3d
@@ -392,6 +397,9 @@ toc:
     title: esnli
   - path: /datasets/catalog/gap
     title: gap
+  - path: /datasets/catalog/gem
+    status: nightly
+    title: gem
   - path: /datasets/catalog/glue
     title: glue
   - path: /datasets/catalog/goemotions
